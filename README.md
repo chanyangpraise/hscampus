@@ -1,2 +1,0 @@
-# hscampus
-AWS Cloud Fullstack
