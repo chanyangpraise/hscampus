@@ -376,3 +376,11 @@ function dongledongle() {
     document.getElementById("dongle").style.display = "none";
   }
 }
+
+/*
+main screen press enter event listener to log in */
+document.getElementById("pw").addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    document.getElementById("login_btn").click();
+  }
+});

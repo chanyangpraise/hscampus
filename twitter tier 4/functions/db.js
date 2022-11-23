@@ -1,26 +1,28 @@
 const mariadb = require("mariadb/callback");
 
 function asyncSQL(sql, callback) {
-	const conn = mariadb.createConnection({
-		host: process.env.host,
-		user: process.env.user,
-		password: process.env.password,
-		port: process.env.dbport,
-		database: process.env.database,
-	});
+  console.log(sql);
+  const conn = mariadb.createConnection({
+    host: process.env.host,
+    user: process.env.user,
+    password: process.env.password,
+    port: process.env.dbport,
+    database: process.env.database,
+  });
 
-	conn.query(sql, (err, rows) => {
-		callback(err, rows);
-		conn.end();
-	});
+  conn.query(sql, (err, rows) => {
+    console.log(rows);
+    callback(err, rows);
+    conn.end();
+  });
 }
 
 // async function asyncSQL(sql) {
 //   const conn = await mariadb.createConnection({
 //     host: process.env.host,
-//     user: process.env.user,
-//     password: process.env.password,
-//     port: process.env.port,
+//     user: "root",
+//     password: "root",
+//     port: process.env.dbport,
 //     database: process.env.database,
 //   });
 
