@@ -32,7 +32,6 @@ getUserList(uid, page, count, () => {
       if (scHei <= scTop + height && isEnd === false) {
         page += 1;
         getUserList(uid, page, count);
-        console.log("끝에 닿았습니다.");
       }
     });
 });

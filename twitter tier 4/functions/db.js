@@ -8,6 +8,9 @@ function asyncSQL(sql, callback) {
     password: process.env.password,
     port: process.env.dbport,
     database: process.env.database,
+    // SELECT COUNT를 했을 때 숫자로 받는 법
+    supportBigNumbers: true,
+    bigNumberStrings: true,
   });
 
   conn.query(sql, (err, rows) => {

@@ -22,6 +22,7 @@ router.get("/get/:bid", (req, res) => {
     `
     SELECT
       c.c_id as cid,
+			u.u_id as uid,
       u.u_nick as nick,
       c.c_content as content,
       c.c_date as date
